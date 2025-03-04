@@ -70,10 +70,42 @@
         .download-button:active {
             scale: 0.8;
         }
+        @font-face {
+          font-family: 'Grapple';
+          src: url('grapple.ttf') format('truetype');
+        }
+        .logo {
+            font-family: 'Grapple', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 30%, #888888 50%, #ffffff 70%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .logo:hover {
+            animation: shine 1.2s linear infinite;
+        }
+        .container .logo {
+            text-align: left;
+        }
+        @keyframes shine {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
     </style>
 </head>
 <body>
+    <br />
     <div class="container">
+    <a href="#" class="logo">GameShare</a>
         <h2>Bangla GTA Vice City</h2>
         <h4>Rockstar Games, Maruf Mostafa (SMB)</h4>
         <h6>2003-2005</h6>
