@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>GameShare - Home</title>
+    <style>
+        @font-face {
+            font-family: 'Grapple';
+            src: url('grapple.ttf') format('truetype');
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 30% 30%, #001F3F, #000, #001F3F, #000, #001F3F);
+            overflow: hidden;
+            position: relative;
+        }
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 100, 255, 0.6), rgba(0, 0, 0, 0.4));
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: float 8s infinite ease-in-out alternate;
+        }
+        .blob:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+        .blob:nth-child(2) { top: 60%; left: 70%; animation-delay: 1s; }
+        .blob:nth-child(3) { top: 50%; left: 30%; animation-delay: 2s; }
+        .blob:nth-child(4) { top: 80%; left: 50%; animation-delay: 3s; }
+
+        @keyframes float {
+            0% { transform: translateY(-20px); }
+            100% { transform: translateY(20px); }
+        }
+        .title {
+            font-family: 'Grapple', sans-serif;
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            opacity: 0;
+            animation: zoomIn 1.5s ease-out forwards, shine 3s infinite;
+            text-align: center;
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .title::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 60%);
+            animation: shine 5s infinite linear;
+        }
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 60%;
+            opacity: 0;
+            animation: dropIn 1s ease-out forwards;
+            text-align: center;
+            font-weight: bold;
+        }
+        @keyframes dropIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="title">GameShare</div>
+    <div class="subtitle">Home of the greatest buried treasure</div>
+</body>
+</html>
